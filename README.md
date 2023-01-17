@@ -1,4 +1,4 @@
-# GAME：太空大戰
+# GAME：太空生存戰
 ## 介紹
 - 2023.01.12 ~ 2023.01.17：以pygame的函式庫製作的一個小遊戲
 - 一點小記錄
@@ -84,7 +84,12 @@ if key_pressed[pygame.K_RIGHT]:
 if key_pressed[pygame.K_LEFT]:
     self.rect.x -= self.speedX
 ```
-
+## 把遊戲py檔轉成可執行檔
+### 下載`auto-pt-to-exe`並開啟使用
+```
+pip install auto-py-to-exe
+auto-py-to-exe
+```
 
 ## 未來計畫
 - 看看能否暫停遊戲

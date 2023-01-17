@@ -27,6 +27,7 @@ bullet_img = pygame.image.load(os.path.join("img", "lovepik-red-bullet.png")).co
 ship_img = pygame.image.load(os.path.join("img", "ship.jpg")).convert()
 ship_lives_img = pygame.transform.scale(ship_img, (24, 32))
 ship_lives_img.set_colorkey(BLACK)
+pygame.display.set_icon(ship_lives_img)
 
 rock_imgs = []
 for i in range(3):
@@ -98,10 +99,13 @@ def draw_init():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+                return True
             if event.type == pygame.KEYUP:  # when stop holding the keyboard button
                 if event.key == pygame.K_ESCAPE:
                     pygame.quit()
+                    return True
                 waiting = False
+    return False
 
 def one_more_time():
     button_clicked = False
@@ -116,9 +120,11 @@ def one_more_time():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+                return False
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     pygame.quit()
+                    return False
                 if event.key == pygame.K_SPACE:
                     waiting = False
             if event.type == pygame.MOUSEBUTTONDOWN:
@@ -129,6 +135,7 @@ def one_more_time():
         else:
             screen.blit(text, text_rect)
         pygame.display.update()
+    return True
 
 class Player(pygame.sprite.Sprite):
     def __init__(self):
@@ -280,7 +287,8 @@ while running:
     else:       pygame.mixer.music.set_volume(0)
     
     if show_init:
-        draw_init()
+        if draw_init():
+            break
         show_init = False
     clock.tick(FPS)      # 一秒內最多只能被執行n次loop (FPS)
     # get userInput
@@ -330,7 +338,8 @@ while running:
             player.hide()
 
     if player.lives == 0 and not death_expl.alive():
-        one_more_time()
+        if one_more_time():
+            break
         player = Player()
         all_sprites = pygame.sprite.Group()
         all_sprites.add(player)
