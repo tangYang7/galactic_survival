@@ -337,9 +337,11 @@ while running:
             player.health = 100
             player.hide()
 
+    # game over
     if player.lives == 0 and not death_expl.alive():
-        if one_more_time():
+        if not one_more_time():
             break
+        # reset game
         player = Player()
         all_sprites = pygame.sprite.Group()
         all_sprites.add(player)
