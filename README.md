@@ -2,8 +2,13 @@
 ## 介紹
 - 2023.01.12 ~ 2023.01.17：以pygame的函式庫製作的一個小遊戲
 - 一點小記錄
-- pygame docs：https://www.pygame.org/docs/
-- 一些參考資料：https://blog.techbridge.cc/2019/10/19/how-to-build-up-game-with-pygame-tutorial/
+- 主要學習參考自：[GrandmaCan -我阿嬤都會的【python】pygame 3小時製作一個遊戲](https://www.youtube.com/watch?v=61eX0bFAsYs&list=PLRjgE3pAnTIK_Kl_IuMB1IjBGJ-IWRz7a&index=2)，並融入自己想要的功能
+- 其它可以用到的連結：
+    - pygame docs：https://www.pygame.org/docs/
+    - 一些參考資料：https://blog.techbridge.cc/2019/10/19/how-to-build-up-game-with-pygame-tutorial/
+
+## 遊戲介面
+<img src="https://user-images.githubusercontent.com/114934655/229305499-6b364b07-1a75-4f2b-a110-a741a77eccc2.png" height="500px"><img src="https://user-images.githubusercontent.com/114934655/229304796-9cde429e-0261-4d5d-9e46-568dc7e298f7.png" height="500px">
 
 ## 遊戲操作說明
 1. 以 **⬅** 跟 **➡** 的方向鍵來控制飛船移動方向
